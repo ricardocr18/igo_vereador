@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <record model="ir.module.category" id="igo_vereador.igo_vereador_gestao">
+            <field name="name">Gestão Vereador</field>
+            <field name="description">Permissôes de Acesso</field>
+            <field name="sequence">3</field>
+        </record>
+
+        <record model="res.groups" id = "igo_vereador.igo_vereador_grupo_usuarios">
+            <field name="name">Atendente</field>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+            <field name="users" eval="[(4,ref('base.user_root'))]"/>
+            <field name="category_id" ref="igo_vereador.igo_vereador_gestao"/>
+        </record>
+
+         <record model="res.groups" id = "igo_vereador.igo_vereador_grupo_gestao">
+            <field name="name">Gestor</field>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+            <!-- <field name="users" eval="[(4,ref('igo_vereador.igo_vereador_grupo_usuarios'))]"/> -->
+            <field name="category_id" ref="igo_vereador.igo_vereador_gestao"/>
+        </record>
+
+        <record model="res.groups" id = "igo_vereador.igo_vereador_grupo_procon">
+            <field name="name">Procon</field>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+            <!-- <field name="users" eval="[(4,ref('igo_vereador.igo_vereador_grupo_usuarios'))]"/> -->
+            <field name="category_id" ref="igo_vereador.igo_vereador_gestao"/>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,69 @@
+<!-- TELA DO PROCOM -->
+<odoo>
+    <data>
+
+       <!-- <record model="ir.ui.view" id="igo_vereador.solicitacaoprocon_list">
+            <field name="name">cadastro list</field>
+            <field name="model">solicitacao.procon</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </tree>
+            </field>
+        </record>-->
+
+        <record model="ir.ui.view" id="igo_vereador.solicitacaoprocon_form">
+            <field name="name">igo_vereador list</field>
+            <field name="model">solicitacao.procon</field>
+            <field name="arch" type="xml">
+                <form>
+                    <h1>Dados do Solicitante</h1>
+                    <group>
+                        <field name="atendente"/>
+                        <field name="cep"/>
+                        <button name="consulta_cep_api" type="object" class="oe_highlight" string="Pesquisar"/>
+                        <field name="name"/>
+                        <field name="cpf"/>
+                        <field name="rg"/>
+                        <field name="telefone"/>
+                        <field name="celular"/>
+                        <field name="email"/>
+                        <field name="endereco"/>
+                        <field name="bairro"/>
+                    </group>
+                    <h1>Dados da Empresa</h1>
+                    <group>
+                        <field name="nomedaempresa"/>
+                        <field name="cnpj"/>
+                        <field name="email_empresa"/>
+                        <field name="telefone_empresa"/>
+                        <field name="celular_empresa"/>
+                        <field name="endereco_empresa"/>
+                        <field name="cep_empresa"/>
+                        <field name="bairro_empresa"/>
+                        <field name="data_cadastro"/>
+                    </group>
+                    <h1>Descrição do Problema</h1>
+                    <group>
+                        <field name="relato"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+         <record model="ir.actions.act_window" id="igo_vereador.solicitacaoprocon_action_window">
+            <field name="name">Solicitação PROCON</field>
+            <field name="res_model">solicitacao.procon</field>
+            <field name="view_mode">form</field>
+        </record>
+
+        <!-- Top menu item -->
+
+        <menuitem name="PROCON"  id="igo_vereador.solicitacaoprocon_menu_1"   action="igo_vereador.solicitacaoprocon_action_window"  parent="igo_vereador.menu_root" />
+        <!-- groups= 'igo_vereador.igo_vereador_grupo_procon' -->
+    </data>
+</odoo>

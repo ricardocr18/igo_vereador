@@ -1,0 +1,93 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="igo_vereador.list">
+            <field name="name">cadastro list</field>
+            <field name="model">cadastro.cidadao</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="cpf"/>
+                    <field name="categoria"/>
+                    <field name="descricao_pedido"/>
+                    <field name="data_solicitacao"/>
+                    <field name="data_entrega"/>
+                    <field name="status"/>
+
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="igo_vereador.form">
+            <field name="name">cadastro list</field>
+            <field name="model">cadastro.cidadao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="cpf"/>
+                        <field name="telefone"/>
+                        <field name="celular"/>
+                        <field name="email"/>
+                    </group>
+                    <group>
+                        <field name="cep"/>
+
+                    </group>
+                         <!-- <p>Pesquisa por CEP</p>  -->
+                       <button name="consulta_cep_api" type="object" class="oe_highlight" string="Pesquisar CEP"/>
+
+                    <group>
+                        <field name="endereco"/>
+                        <field name="bairro"/>
+                        <field name="municipio"/>
+                        <field name="estado"/>
+                        <field name="datadenascimento"/>
+                    </group>
+
+                    <group>
+                        <field name="categoria"/>
+                        <field name="descricao_pedido"/>
+                    </group>
+
+                    <group>
+                        <field name="data_solicitacao"/>
+                        <field name="data_entrega"/>
+                        <field name="status"/>
+                    </group>
+
+                    <group>
+                        <field name="observacao"/>
+                        <field name="acao"/>
+                        <field name="responsavel"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="igo_vereador.action_window">
+            <field name="name">CADASTRO</field>
+            <field name="res_model">cadastro.cidadao</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+ <!-- AQUI VC CRIA O XML DE LIST E FORM E ACTION O ID TEM QUE SER UNICO -->
+
+        <!-- Top menu item -->
+
+        <menuitem name="Mandato Igo Menezes" id="igo_vereador.menu_root"/>
+
+
+        <!-- menu categories -->
+
+        <menuitem name="SOLICITAÇÕES" id="igo_vereador.menu_1"  action="igo_vereador.action_window" parent="igo_vereador.menu_root"/>
+
+        <!-- actions -->
+
+        <!-- <menuitem name="Teste" id="igo_vereador.menu_solicitacao_teste" parent="igo_vereador.menu_1"
+                  action="igo_vereador.andamento_action_window"/> -->
+    </data>
+</odoo>

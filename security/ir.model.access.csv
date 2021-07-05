@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cadastro_cidadao,cadastro_cidadao,model_cadastro_cidadao,igo_vereador.igo_vereador_grupo_gestao,1,1,1,1
+access_solicitacao_procon,solicitacao_procon,model_solicitacao_procon,igo_vereador.igo_vereador_grupo_gestao,1,1,1,1
+access_cadastro_categoria,cadastro_categoria,model_cadastro_categoria,igo_vereador.igo_vereador_grupo_gestao,1,1,1,1
+
+access_cadastro_cidadao,cadastro_cidadao,model_cadastro_cidadao,igo_vereador.igo_vereador_grupo_usuarios,1,1,1,0
+access_solicitacao_procon,solicitacao_procon,model_solicitacao_procon,igo_vereador.igo_vereador_grupo_usuarios,1,1,1,0
+access_cadastro_categoria,cadastro_categoria,model_cadastro_categoria,igo_vereador.igo_vereador_grupo_usuarios,1,1,1,0

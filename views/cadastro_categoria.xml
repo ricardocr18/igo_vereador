@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="igo_vereador.cadastrocategoria_list">
+            <field name="name">Categoria list</field>
+            <field name="model">cadastro.categoria</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="descricao"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+
+         <record model="ir.actions.act_window" id="igo_vereador.cadastrocategoria_action_window">
+            <field name="name">Categoria</field>
+            <field name="res_model">cadastro.categoria</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Top menu item -->
+
+        <menuitem name="AD. CATEGORIA" id="igo_vereador.cadastrocategoria_menu_1" parent="igo_vereador.menu_root" action="igo_vereador.cadastrocategoria_action_window" />
+        <!-- action="igo_vereador.andamento_action_window" -->
+
+        <!-- actions -->
+
+        <!-- <menuitem name="Sete" id="igo_vereador.andamento.menu_1_sete" parent="igo_vereador.andamento_menu_1" action="igo_vereador.andamento_action_window"/> -->
+
+
+    </data>
+</odoo>
