@@ -41,11 +41,7 @@
                     <group>
                         <field name="endereco"/>
                         <field name="bairro"/>
-<<<<<<< HEAD
                         <field name="municipio"/>
-=======
-                        <field name="muni"/>
->>>>>>> 4d76488576a2f03bc14103c0512e5de96c7eb43d
                         <field name="estado"/>
                     </group>
 

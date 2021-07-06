@@ -1,2 +1,1 @@
-Arquivos mudados
-na linha do view
+Mais modifcações na model e views
