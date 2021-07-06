@@ -19,7 +19,7 @@ class CadastroCidadao(models.Model):
     endereco = fields.Char("Endereço")
     cep = fields.Char("Digite o Cep")
     bairro = fields.Char("Bairro")
-    municipio = fields.Char("Município")
+    localidade = fields.Char("Município")
     estado = fields.Char("Estado")
     datadenascimento = fields.Datetime ("Data de Nascimento")
 
@@ -76,7 +76,7 @@ class CadastroCidadao(models.Model):
             self.cep = resultado.get('cep')
             self.endereco = resultado.get('logradouro')
             self.bairro = resultado.get('bairro')
-            self.municipio = resultado.get('localidade')
+            self.localidade = resultado.get('localidade')
             self.estado = resultado.get('uf')
 
 
