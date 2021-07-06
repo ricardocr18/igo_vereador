@@ -12,7 +12,7 @@ class CadastroCidadao(models.Model):
 
     name = fields.Char("Nome Completo")
     cpf = fields.Char("CPF")
-    ("cpf").inputmask("999.999.999-99")
+    # ("cpf").inputmask("999.999.999-99")
     email = fields.Char("E-mail")
     telefone = fields.Char("Telefone")
     celular = fields.Char("Celular")
@@ -21,7 +21,7 @@ class CadastroCidadao(models.Model):
     bairro = fields.Char("Bairro")
     municipio = fields.Char("Município")
     estado = fields.Char("Estado")
-    datadenascimento = fields.Char("Data de Nascimento")
+    datadenascimento = fields.Datetime ("Data de Nascimento")
 
     descricao_pedido = fields.Selection([('acao_social','Ação Social'),('ass_juridica','Assistência Jurídica'),
     ('ass_social','Assitência Social'), ('aterro','Aterro'),('aux_desemprogo','Auxílio Desemprego'),

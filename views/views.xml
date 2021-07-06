@@ -26,6 +26,7 @@
                     <group>
                         <field name="name"/>
                         <field name="cpf"/>
+                        <field name="datadenascimento"/>
                         <field name="telefone"/>
                         <field name="celular"/>
                         <field name="email"/>
@@ -42,7 +43,6 @@
                         <field name="bairro"/>
                         <field name="municipio"/>
                         <field name="estado"/>
-                        <field name="datadenascimento"/>
                     </group>
 
                     <group>
