@@ -19,9 +19,10 @@ class CadastroCidadao(models.Model):
     endereco = fields.Char("Endereço")
     cep = fields.Char("Digite o Cep")
     bairro = fields.Char("Bairro")
-    localidade = fields.Char("Município")
+    #localidade = fields.Char("Município")
     estado = fields.Char("Estado")
     datadenascimento = fields.Datetime ("Data de Nascimento")
+    muni = fields.Char("muni")
 
     descricao_pedido = fields.Selection([('acao_social','Ação Social'),('ass_juridica','Assistência Jurídica'),
     ('ass_social','Assitência Social'), ('aterro','Aterro'),('aux_desemprogo','Auxílio Desemprego'),
@@ -76,7 +77,7 @@ class CadastroCidadao(models.Model):
             self.cep = resultado.get('cep')
             self.endereco = resultado.get('logradouro')
             self.bairro = resultado.get('bairro')
-            self.localidade = resultado.get('localidade')
+            self.muni = resultado.get('localidade')
             self.estado = resultado.get('uf')
 
 
