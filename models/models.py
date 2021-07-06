@@ -19,7 +19,7 @@ class CadastroCidadao(models.Model):
     endereco = fields.Char("Endereço")
     cep = fields.Char("Digite o Cep")
     bairro = fields.Char("Bairro")
-    localidade = fields.Char("Município")
+    municipio = fields.Char("Município")
     estado = fields.Char("Estado")
     datadenascimento = fields.Datetime ("Data de Nascimento")
 
@@ -76,60 +76,38 @@ class CadastroCidadao(models.Model):
             self.cep = resultado.get('cep')
             self.endereco = resultado.get('logradouro')
             self.bairro = resultado.get('bairro')
-            self.localidade = resultado.get('localidade')
+            self.municipio = resultado.get('localidade')
             self.estado = resultado.get('uf')
 
 
 
-# TABELA DOS CADASTROS DOS DADOS DO PROCON
+# TABELA DOS CADASTROS DOS DADOS PARA O PROCON
 class SolicitacaoProcon(models.Model):
     _name = 'solicitacao.procon'
     _description = 'Solicitação Procon'
 
+    #Cadastro referente aos dados do reclamante
+    atendente = fields.Char("Nome da Atendente")
     name = fields.Char("Nome Completo")
     cpf = fields.Char("CPF")
     rg = fields.Char("RG")
-    atendente = fields.Char("Nome da Atendente")
     telefone = fields.Char("Telefone")
     celular = fields.Char("Celular")
     email = fields.Char("E-mail")
-    endereco = fields.Char("Endereço")
     cep = fields.Char("CEP")
+    endereco = fields.Char("Endereço")
     bairro = fields.Char("Bairro")
+    municipio = fields.Char("Município")
+    estado = fields.Char("Estado")
 
-    nomedaempresa = fields.Char("Nome da Empresa")
-    cnpj = fields.Char("CNPJ")
-    email_empresa = fields.Char("E-mail")
-    telefone_empresa = fields.Char("Telefone")
-    celular_empresa = fields.Char("Celular")
-    endereco_empresa = fields.Char("Endereço")
-    cep_empresa = fields.Char("CEP")
-    bairro_empresa = fields.Char("Bairro")
-    data_cadastro = fields.Datetime("Data do Cadastro")
-
-    relato = fields.Text("Relato")
-
-    def consulta_cep_api(self):
+    def consulta_cepreclamante_api(self):
         cep = self.cep.replace('-', '')
         cep = cep[:8]
         url = "https://viacep.com.br/ws/%s/json/" % cep
 
         payload = {}
         headers = {}
-        """
-        Modelo de Retorno
-        {'cep': '09750-730', 
-        'logradouro': 'Rua José Versolato', 
-        'complemento': '', 
-        'bairro': 
-        'Centro', 
-        'localidade': 'São Bernardo do Campo', 
-        'uf': 'SP', 
-        'ibge': '3548708', 
-        'gia': '6350', 
-        'ddd': '11', 
-        'siafi': '7075'}
-        """
+
         response = requests.request("GET", url, headers=headers, data=payload)
 
         resultado = response.json()
@@ -140,6 +118,44 @@ class SolicitacaoProcon(models.Model):
             self.cep = resultado.get('cep')
             self.endereco = resultado.get('logradouro')
             self.bairro = resultado.get('bairro')
+            self.municipio = resultado.get('localidade')
+            self.estado = resultado.get('uf')
+
+
+    #Cadastro do Pessoa Física
+    nomedaempresa = fields.Char("Nome da Empresa")
+    cnpj = fields.Char("CNPJ")
+    email_empresa = fields.Char("E-mail")
+    telefone_empresa = fields.Char("Telefone")
+    celular_empresa = fields.Char("Celular")
+    cep_empresa = fields.Char("CEP")
+    endereco_empresa = fields.Char("Endereço")
+    bairro_empresa = fields.Char("Bairro")
+    municipio_empresa = fields.Char("Município")
+    estado_empresa = fields.Char("Estado")
+    data_cadastro = fields.Datetime("Data do Cadastro")
+    relato = fields.Text("Relato")
+
+    def consulta_cepempresa_api(self):
+        cep = self.cep_empresa.replace('-', '')
+        cep = cep [:8]
+        url = "https://viacep.com.br/ws/%s/json/" % cep
+
+        payload = {}
+        headers = {}
+
+        response = requests.request("GET", url, headers=headers, data=payload)
+
+        resultado = response.json()
+        print(resultado)
+        if resultado.get('erro') == True:
+            raise UserError('Nenhum CEP encontrado')
+        else:
+            self.cep_empresa = resultado.get('cep')
+            self.endereco_empresa = resultado.get('logradouro')
+            self.bairro_empresa = resultado.get('bairro')
+            self.municipio_empresa = resultado.get('localidade')
+            self.estado_empresa = resultado.get('uf')
 
 
 

@@ -41,7 +41,7 @@
                     <group>
                         <field name="endereco"/>
                         <field name="bairro"/>
-                        <field name="localidade"/>
+                        <field name="municipio"/>
                         <field name="estado"/>
                     </group>
 

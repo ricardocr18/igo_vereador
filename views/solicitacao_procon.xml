@@ -2,7 +2,7 @@
 <odoo>
     <data>
 
-       <!-- <record model="ir.ui.view" id="igo_vereador.solicitacaoprocon_list">
+       <record model="ir.ui.view" id="igo_vereador.solicitacaoprocon_list">
             <field name="name">cadastro list</field>
             <field name="model">solicitacao.procon</field>
             <field name="arch" type="xml">
@@ -12,7 +12,7 @@
                     <field name="rg"/>
                 </tree>
             </field>
-        </record>-->
+        </record>
 
         <record model="ir.ui.view" id="igo_vereador.solicitacaoprocon_form">
             <field name="name">igo_vereador list</field>
@@ -21,17 +21,24 @@
                 <form>
                     <h1>Dados do Solicitante</h1>
                     <group>
-                        <field name="atendente"/>
-                        <field name="cep"/>
-                        <button name="consulta_cep_api" type="object" class="oe_highlight" string="Pesquisar"/>
+                        <!-- <field name="atendente"/> -->
                         <field name="name"/>
                         <field name="cpf"/>
                         <field name="rg"/>
                         <field name="telefone"/>
                         <field name="celular"/>
                         <field name="email"/>
+                    </group>
+
+                        <b>Digite o CEP</b>
+                        <field name="cep"/>
+                        <button name="consulta_cepreclamante_api" type="object" class="oe_highlight" string="Pesquisar"/>
+
+                    <group>
                         <field name="endereco"/>
                         <field name="bairro"/>
+                        <field name="municipio"/>
+                        <field name="estado"/>
                     </group>
                     <h1>Dados da Empresa</h1>
                     <group>
@@ -40,9 +47,17 @@
                         <field name="email_empresa"/>
                         <field name="telefone_empresa"/>
                         <field name="celular_empresa"/>
-                        <field name="endereco_empresa"/>
+                    </group>
+
+                        <b>Digite o CEP da Empresa</b>
                         <field name="cep_empresa"/>
+                        <button name="consulta_cepempresa_api" type="object" class="oe_highlight" string="Pesquisar"/>
+
+                    <group>
+                        <field name="endereco_empresa"/>
                         <field name="bairro_empresa"/>
+                        <field name="municipio_empresa"/>
+                        <field name="estado_empresa"/>
                         <field name="data_cadastro"/>
                     </group>
                     <h1>Descrição do Problema</h1>
