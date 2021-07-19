@@ -19,7 +19,7 @@
             <field name="model">solicitacao.procon</field>
             <field name="arch" type="xml">
                 <form>
-                    <h1>Dados do Solicitante</h1>
+                    <h1>Dados teste do Solicitante</h1>
                     <group>
                         <!-- <field name="atendente"/> -->
                         <field name="name"/>
@@ -73,7 +73,7 @@
          <record model="ir.actions.act_window" id="igo_vereador.solicitacaoprocon_action_window">
             <field name="name">Solicitação PROCON</field>
             <field name="res_model">solicitacao.procon</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
         <!-- Top menu item -->

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="igo_vereador.report_solicitacao">
+        <field name="name">Relatório de Solicitacao</field>
+        <field name="model">report_solicitacao</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Impressão">
+                <group>
+                    <group string=" Escolha um status para impressão">
+                        <field name="status"/>
+
+                    </group>
+
+                </group>
+                <footer>
+                    <button name="get_report" string="Imprimir" type="object" class="oe_highlight"/>
+                    <button string="Cancelar" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="action_report_solicitacao_wizard"
+                name="Impressão"
+                res_model="report_solicitacao"
+                view_mode="form"
+                target="new"/>
+    <menuitem action="action_report_solicitacao_wizard"
+              id="menu_action_fatura_report_wizard"
+              parent="igo_vereador.menu_root" sequence="20"/>
+</odoo>

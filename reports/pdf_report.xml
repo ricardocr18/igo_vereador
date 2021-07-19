@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report id="recap_report"
+            model="cadastro.cidadao"
+            string="Relatório de Solicitacao"
+            report_type="qweb-pdf"
+            name="igo_vereador.solicitacao_report_view"
+            menu="False"/>
+    <template id="igo_vereador.solicitacao_report_view">
+        <t t-call="web.html_container">
+            <h3 class="text-center">Status - <t t-esc="status"/></h3>
+            <t t-call="web.internal_layout">
+                <h3 class="text-center">Status - <t t-esc="status"/></h3>
+                    <table class="table table-striped table-sm">
+                                <thead>
+                                    <th class="text-center" style="width: 10%">Data Solicitacao</th>
+                                    <th class="text-center" style="width: 10%">Data Entrega</th>
+                                    <th class="text-center" style="width: 10%">Nome</th>
+                                    <th class="text-center" style="width: 25%">CPF</th>
+                                    <th class="text-center" style="width: 15%">Email</th>
+                                    <th class="text-center" style="width: 15%">Telefone</th>
+                                    <th class="text-center" style="width: 15%">Celular</th>
+                                    <th class="text-center" style="width: 15%">Descricao</th>
+                                    <th class="text-center" style="width: 20%">Categoria</th>
+                                    <th class="text-center" style="width: 15%">Status</th>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="docs" t-as="doc">
+                                        <tr style="font-size: 10px;">
+                                            <td>
+                                                <span t-esc="doc['data_solicitacao']" t-options='{"widget": "date"}'/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-esc="doc['data_entrega']"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-esc="doc['name']"/>
+                                            </td>
+                                            <td class="text-center">
+                                                <span t-esc="doc['cpf']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="doc['email']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="doc['telefone']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="doc['celular']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="doc['descricao_pedido']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="doc['categoria']"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="doc['status']"/>
+                                            </td>
+
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+            </t>
+
+        </t>
+    </template>
+</odoo>

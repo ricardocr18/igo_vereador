@@ -25,6 +25,8 @@
     'data': [
         'security/seguranca.xml',
         'security/ir.model.access.csv',
+        'reports/pdf_report.xml',
+        'reports/report.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/cadastro_categoria.xml',
