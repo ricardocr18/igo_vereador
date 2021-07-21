@@ -9,6 +9,8 @@
                 <group>
                     <group string=" Escolha um status para impressão">
                         <field name="status"/>
+                        <field name="cpf"/>
+
 
                     </group>
 

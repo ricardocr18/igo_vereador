@@ -8,6 +8,7 @@ class RelatorioSolicitacao(models.TransientModel):
                                ('pendente', 'Pendente'),
                                ('concluido', 'Concluído')], string="Status")
 
+    cpf = fields.Char("CPF")
 
 
     def get_report(self):
@@ -16,7 +17,8 @@ class RelatorioSolicitacao(models.TransientModel):
             'ids': self.ids,
             'model': self._name,
             'form': {
-                'status': self.status
+                'status': self.status,
+                'cpf': self.cpf,
 
             },
         }
@@ -30,9 +32,18 @@ class ReportRelatorioSolicitacao(models.AbstractModel):
     @api.model
     def _get_report_values(self, docids, data=None):
         status = data['form']['status']
+        cpf = data['form']['cpf']
         docs = []
+        print (status,cpf)
 
-        solicitacoes = self.env['cadastro.cidadao'].search([('status', '=', status),], order='data_solicitacao asc')
+        if status != False and cpf == False:
+            solicitacoes = self.env['cadastro.cidadao'].search([('status', '=', status),], order='data_solicitacao asc')
+
+        if cpf != False and status == False:
+            solicitacoes = self.env['cadastro.cidadao'].search([('cpf', '=', cpf), ], order='data_solicitacao asc')
+
+        if cpf != False and status != False:
+            solicitacoes = self.env['cadastro.cidadao'].search([('status', '=', status),('cpf', '=', cpf), ], order='data_solicitacao asc')
 
         for solicitacao in solicitacoes:
             docs.append({
