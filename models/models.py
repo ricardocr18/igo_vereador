@@ -21,22 +21,32 @@ class CadastroCidadao(models.Model):
     bairro = fields.Char("Bairro")
     municipio = fields.Char("Município")
     estado = fields.Char("Estado")
-    datadenascimento = fields.Datetime ("Data de Nascimento")
+    datadenascimento = fields.Date ("Data de Nascimento")
 
-    descricao_pedido = fields.Selection([('acao_social','Ação Social'),('ass_juridica','Assistência Jurídica'),
+    descricao_pedido = fields.Selection([
+    ('acao_social','Ação Social'),('ass_juridica','Assistência Jurídica'),
     ('ass_social','Assitência Social'), ('aterro','Aterro'),('aux_desemprogo','Auxílio Desemprego'),
-    ('aux_emergencial','Auxílio Emergencial'),('bolsa_emergencial','Bolsa Emergencial'),('bola_familia','Bolsa Família'),
-    ('bolsa_familia_agendamento','Bolsa Família Agendamento'),('cadastro_unico','Cadastro Único'),('cartão_sus_primeira','Cartão do SUS 1ª Via'),
-    ('cartão_sus_segunda','Cartão do SUS 2ª Via'), ('cartao_idoso','Cartão Idoso'),('carteira_trabalho_primeira','Carteira de Trabalho 1ª Via'),
-    ('carteira_trabalho_segunda', 'Carteira de Trabalho 2ª Via'),('cirurgira','Cirurgia'),('conservação','Conservação'),('consulta','Consulta')])
+    ('aux_emergencial','Auxílio Emergencial'),('bolsa_familia','Bolsa Família'),
+    ('bolsa_familia_agendamento','Bolsa Família Agendamento'),('cadastro_unico','Cadastro Único'),('cartao_sus_primeira','Cartão do SUS 1ª Via'),
+    ('cartao_sus_segunda','Cartão do SUS 2ª Via'), ('cartao_idoso','Cartão Idoso'),('carteira_trabalho_primeira','Carteira de Trabalho 1ª Via'),
+    ('carteira_trabalho_segunda', 'Carteira de Trabalho 2ª Via'),('cirurgira','Cirurgia'),('consulta','Consulta'),
+    ('declaracao_resi', 'Daclaração de Residência'),('exames','Exames'), ('fgts','FGTS'),('iluminação','Iliminação'),
+    ('iptu','IPTU'),('isencao','Isenção'),('kit_limpeza','Kit Limpeza'),('limpeza','Limpeza'),('materiais','Materiais'),
+    ('medicamento','Medicamento'),('meu_inss', 'Meu INSS'), ('mult_humanitario','Multirão Humanitário'),
+    ('passe_social','Passe Social'),('pavimentacao','Pavimentação'),('pelc', 'PELC'),
+    ('prog_casa_minha_vida', 'Programa Minha Casa Minha Vida'), ('recapeamento', 'Recapeamento'), ('reparo_rua','Reparo de Rua'),
+    ('rg_primeira_via', 'RG 1ª Via'), ('rg_segunda_via', 'RG 2ª Via'), ('titulo_eleitor_uma_via', 'Titulo de Eleitor 1ª Via'),
+    ('titulo_eleitor_segunda_via', 'Titulo de Eleitor 2ª Via'), ('titulo_eleitor_biometr', 'Titulo de Eleitor Biometria'),
+    ('titulo_eleitor_regula', 'Titulo de Eleitor Regularização'), ('titulo_eleitor_transf', 'Titulo de Eleitor Transferêcia'),
+    ('vagaParaEscola', 'Vaga para Escola'), ('valeSocial', 'Vale Social')])
 
     categoria = fields.Selection([('ass_social','Ass. Social'),('conservação','Conservação'),
                                   ('documentacao','Documentação'), ('educacao','Educação'),
-                                  ('lazer','Lazer'), ('limpeza','Limpeza'),('moradia','Moradia'),
+                                  ('lazer','Esporte e Lazer'), ('moradia','Moradia'),
                                   ('saude', 'Saúde'), ('serv_publico','Serviço Público'),
                                   ('trabalho','Trabalho')])
-    data_solicitacao = fields.Datetime("Data Solicitacao")
-    data_entrega = fields.Datetime("Data Entrega")
+    data_solicitacao = fields.Date("Data Solicitacao")
+    data_entrega = fields.Date("Data Entrega")
     status = fields.Selection([('andamento','Em andamento'),
                              ('pendente','Pendente'),
                              ('concluido','Concluído')],string="Status")

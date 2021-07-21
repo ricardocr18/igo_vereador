@@ -23,7 +23,7 @@
         </field>
     </record>
     <act_window id="action_report_solicitacao_wizard"
-                name="Impressão"
+                name="IMPRESSÃO"
                 res_model="report_solicitacao"
                 view_mode="form"
                 target="new"/>

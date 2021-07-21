@@ -13,14 +13,14 @@
                 <h3 class="text-center">Status - <t t-esc="status"/></h3>
                     <table class="table table-striped table-sm">
                                 <thead>
-                                    <th class="text-center" style="width: 10%">Data Solicitacao</th>
+                                    <th class="text-center" style="width: 10%">Data Solicitação</th>
                                     <th class="text-center" style="width: 10%">Data Entrega</th>
                                     <th class="text-center" style="width: 10%">Nome</th>
                                     <th class="text-center" style="width: 25%">CPF</th>
                                     <th class="text-center" style="width: 15%">Email</th>
                                     <th class="text-center" style="width: 15%">Telefone</th>
                                     <th class="text-center" style="width: 15%">Celular</th>
-                                    <th class="text-center" style="width: 15%">Descricao</th>
+                                    <th class="text-center" style="width: 15%">Descrição</th>
                                     <th class="text-center" style="width: 20%">Categoria</th>
                                     <th class="text-center" style="width: 15%">Status</th>
                                 </thead>
