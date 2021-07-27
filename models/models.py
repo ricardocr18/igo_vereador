@@ -13,14 +13,18 @@ class CadastroCidadao(models.Model):
     name = fields.Char("Nome Completo")
     cpf = fields.Char("CPF")
     # ("cpf").inputmask("999.999.999-99")
+    rg = fields.Char ("RG")
+    cartao_sus = fields.Char ("Cartão do SUS")
     email = fields.Char("E-mail")
     telefone = fields.Char("Telefone")
+    celular_dois = fields.Char("2º Celular")
     celular = fields.Char("Celular")
     endereco = fields.Char("Endereço")
     cep = fields.Char("Digite o Cep")
     bairro = fields.Char("Bairro")
     municipio = fields.Char("Município")
     estado = fields.Char("Estado")
+    complemento = fields.Char ("Complemento")
     datadenascimento = fields.Date ("Data de Nascimento")
 
     descricao_pedido = fields.Selection([

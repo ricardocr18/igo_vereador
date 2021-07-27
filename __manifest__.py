@@ -29,7 +29,7 @@
         'reports/report.xml',
         'views/views.xml',
         'views/templates.xml',
-        'views/cadastro_categoria.xml',
+        #'views/cadastro_categoria.xml',
         'views/solicitacao_procon.xml',
 
     ],

@@ -12,8 +12,9 @@
                     <field name="categoria"/>
                     <field name="descricao_pedido"/>
                     <field name="data_solicitacao"/>
-                    <field name="data_entrega"/>
                     <field name="status"/>
+                    <field name="observacao"/>
+
 
                 </tree>
             </field>
@@ -26,9 +27,12 @@
                     <group>
                         <field name="name"/>
                         <field name="cpf"/>
+                        <field name="rg"/>
+                        <field name="cartao_sus"/>
                         <field name="datadenascimento"/>
                         <field name="telefone"/>
                         <field name="celular"/>
+                        <field name="celular_dois"/>
                         <field name="email"/>
                     </group>
                     <group>
@@ -43,6 +47,7 @@
                         <field name="bairro"/>
                         <field name="municipio"/>
                         <field name="estado"/>
+                        <field name="complemento"/>
                     </group>
 
                     <group>
@@ -59,7 +64,7 @@
                     <group>
                         <field name="observacao"/>
                         <field name="acao"/>
-                        <field name="responsavel"/>
+
                     </group>
                 </form>
             </field>
